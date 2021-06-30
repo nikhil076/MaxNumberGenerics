@@ -2,18 +2,18 @@ package com.bridgelabz.maxnumber_generics;
 
 public class MaxNumberGenerics 
 {
-	public static <E extends Comparable<E>> void toPrint(E integerVal1,E integerVal2,E integerVal3)
+	public static <E extends Comparable<E>> void toPrint(E Value1,E Value2,E Value3)
 	{
-		E maxInteger=integerVal1;
-		if(integerVal2.compareTo(maxInteger)>0)
+		E maxValue=Value1;
+		if(Value2.compareTo(maxValue)>0)
 		{
-			maxInteger=integerVal2;
+			maxValue=Value2;
 		}
-		if(integerVal3.compareTo(maxInteger)>0)
+		if(Value3.compareTo(maxValue)>0)
 		{
-			maxInteger=integerVal3;
+			maxValue=Value3;
 		}
-		System.out.println("the Max Integer number is :"+maxInteger);
+		System.out.println("the Max Value number is :"+maxValue);
 	}
 
 	public static void main(String[] args) {
