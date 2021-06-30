@@ -12,6 +12,7 @@ public class MaxNumberGenerics<T extends Comparable<T>>
 		this.value1 = value1;
 		this.value2 = value2;
 		this.value3 = value3;
+		toPrint(this.value1, this.value2, this.value3);
 	}
 
 	public MaxNumberGenerics() {
@@ -21,6 +22,7 @@ public class MaxNumberGenerics<T extends Comparable<T>>
 
 	public <T extends Comparable<T>> void toPrint(T value1,T value2,T value3)
 	{
+		T middle,start,end;
 		T maxValue=value1;
 		if(value2.compareTo(maxValue)>0)
 		{
@@ -36,10 +38,10 @@ public class MaxNumberGenerics<T extends Comparable<T>>
 	public static void main(String[] args) {
 		Integer integer1 = 20, integer2=50,integer3=10;
 		Float float1 = 10.2f, float2=102.23f,float3=10.45f;
-		String string1="Apple",string2="banana",string3="Pear";
+		String string1="Fig",string2="banana",string3="Pear";
 		
-		new MaxNumberGenerics<Integer>().toPrint(integer1, integer2, integer3);
-		new MaxNumberGenerics<Float>().toPrint(float1, float2, float3);
-		new MaxNumberGenerics<String>().toPrint(string1, string2, string3);
+		new MaxNumberGenerics<Integer>(integer1, integer2, integer3);
+		new MaxNumberGenerics<Float>(float1, float2, float3);
+		new MaxNumberGenerics<String>(string1, string2, string3);
 	}
 }
