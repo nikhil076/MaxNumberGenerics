@@ -1,24 +1,45 @@
 package com.bridgelabz.maxnumber_generics;
 
-public class MaxNumberGenerics 
+public class MaxNumberGenerics<T extends Comparable<T>>
 {
-	public static <E extends Comparable<E>> void toPrint(E Value1,E Value2,E Value3)
+	T value1;
+	T value2;
+	T value3;
+	
+	public MaxNumberGenerics(T value1, T value2, T value3) 
 	{
-		E maxValue=Value1;
-		if(Value2.compareTo(maxValue)>0)
+		super();
+		this.value1 = value1;
+		this.value2 = value2;
+		this.value3 = value3;
+	}
+
+	public MaxNumberGenerics() {
+		super();
+	}
+
+
+	public <T extends Comparable<T>> void toPrint(T value1,T value2,T value3)
+	{
+		T maxValue=value1;
+		if(value2.compareTo(maxValue)>0)
 		{
-			maxValue=Value2;
+			maxValue=value2;
 		}
-		if(Value3.compareTo(maxValue)>0)
+		if(value3.compareTo(maxValue)>0)
 		{
-			maxValue=Value3;
+			maxValue=value3;
 		}
-		System.out.println("the Max Value number is :"+maxValue);
+		System.out.println("the maximum value is :"+maxValue);
 	}
 
 	public static void main(String[] args) {
-		toPrint(10, 50, 20);
-		toPrint(10.2f, 102.23f, 10.45f);
-		toPrint("Apple", "banana", "Pear");
+		Integer integer1 = 20, integer2=50,integer3=10;
+		Float float1 = 10.2f, float2=102.23f,float3=10.45f;
+		String string1="Apple",string2="banana",string3="Pear";
+		
+		new MaxNumberGenerics<Integer>().toPrint(integer1, integer2, integer3);
+		new MaxNumberGenerics<Float>().toPrint(float1, float2, float3);
+		new MaxNumberGenerics<String>().toPrint(string1, string2, string3);
 	}
 }
