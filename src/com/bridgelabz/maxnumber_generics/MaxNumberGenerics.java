@@ -32,7 +32,36 @@ public class MaxNumberGenerics<T extends Comparable<T>>
 		{
 			maxValue=value3;
 		}
-		System.out.println("the maximum value is :"+maxValue);
+		if (value1.compareTo(value2)>0)
+		{   
+			middle=value1;    
+			start=value2;   
+		 }else 
+		 {
+			   middle=value2;  
+			   start=value1;  
+		 } 
+		 if (middle.compareTo(value3)>0)
+		 { 
+			  end=middle;    
+			  if(start.compareTo(value3)>0)
+			  {         
+				  middle=start;                
+				  start=value3;
+			  }
+			  else
+			  {
+				  middle=value3;      
+			  }         
+		  }
+		  else 
+		   end=value3;
+		   System.out.println("Sorted Value is ");
+		   System.out.println(start);
+		   System.out.println(middle);
+		   System.out.println(end); 
+		   System.out.println("the maximum value is :"+maxValue);
+		   System.out.println();
 	}
 
 	public static void main(String[] args) {
